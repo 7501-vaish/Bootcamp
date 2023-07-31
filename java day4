@@ -1,1 +1,161 @@
+//access modifier
+//A.java
+package module1;
 
+public class A {
+	
+	private int a = 1;
+	int b = 2;
+	protected int c = 3;
+	public int d = 4;
+	
+	public static void main(String[] args) {
+		
+		A o = new A();
+		System.out.println(o.a);
+		System.out.println(o.b);
+		System.out.println(o.c);
+		System.out.println(o.d);
+
+	}
+
+}
+
+// .java
+package module1;
+
+public class B {
+
+	public static void main(String[] args) {
+		
+		A o = new A();
+		System.out.println(o.b);
+		System.out.println(o.c);
+		System.out.println(o.d);
+
+	}
+
+}
+
+//C.java
+package module2;
+
+import module1.A;
+
+public class C {
+
+	public static void main(String[] args) {
+		
+		A o = new A();
+		System.out.println(o.d);
+	}
+
+}
+
+//D.java
+package module2;
+
+import module1.A;
+
+public class D extends A{
+	
+	
+	public static void main(String[] args) {
+		
+		D o = new D();
+		System.out.println(o.c);
+		System.out.println(o.d);
+
+	}
+
+}
+
+//ecapsulation
+package Bootcamp.Day4.Encapsulation;
+
+public class Employee {
+	
+	private int id;
+	private String name;
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+
+}
+
+//Inheritance
+//single inheritance
+package Bootcamp.Day4.Inheritance;
+
+class Parent{
+	
+	void mothertongue() {
+		System.out.println("Hindi");
+	}
+}
+
+class Child extends Parent{
+	
+	void mothertongue() {
+		super.mothertongue();
+		System.out.println("English");
+	}
+}
+
+public class SingleInheritance {
+
+	public static void main(String[] args) {
+		
+		Child child = new Child();
+		child.mothertongue();
+
+	}
+
+}
+
+//superdemo
+package Bootcamp.Day4.Inheritance;
+
+class Bank{
+	
+	int amount = 1;  // Global
+
+}
+
+class Axis extends Bank{
+	
+	int amount = 2;  // Global
+	void test() {
+		int amount = 3;   // Local
+		System.out.println(super.amount);
+		System.out.println(this.amount);
+		System.out.println(amount);
+		
+	}
+}
+
+public class SuperDemo {
+
+	public static void main(String[] args) {
+		
+		Axis axis = new Axis();
+		axis.test();
+
+	}
+
+}
