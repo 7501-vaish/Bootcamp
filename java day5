@@ -1,1 +1,219 @@
+import java.util.Scanner;
+public class problem1
+{
+public static void main(String args[])
+{
+    Scanner sc = new Scanner(System.in);
+    System.out.print("enter the number");
+    int num=sc.nextInt();
+    for(int i=0;i<=10;i++)
+    {
+         System.out.println(num+"*"+i+"="+num*i);
+    }
+}
+}
 
+//
+class Employee
+ {
+    int id;
+    String name;
+    static String dept;
+
+    static void Display()
+{
+       System.out.println("This is a ststic void");
+    }
+
+    public static void main(String[] args)
+{
+
+        Employee.dept="hr";
+
+         Employee e1 = new Employee();
+         e1.id=1;
+         e1.name="sachin";
+         e1.dept="dept 1";
+
+         Employee e2 = new Employee();
+          e2.id=2;
+          e2.name="virat";
+            e2.dept="dept 2";
+
+        Employee e3 = new Employee();
+          e3.id=3;
+          e3.name="rohit";
+            e3.dept="dept 3";
+
+          System.out.println(e1.id+" "+e1.name+" "+e1.dept);
+          System.out.println(e2.id+" "+e2.name+" "+e2.dept);
+          System.out.println(e3.id+" "+e3.name+" "+e3.dept);
+
+        
+    }
+}
+
+
+//
+class Parent
+{
+    int id;
+    public Parent(int id)
+    {
+    System.out.println("parent constructor"+id);
+    }
+     public Parent()
+    {
+    System.out.println("child constructor");
+    }
+}
+class Child extends Parent
+{
+    public Child()
+    {
+        super();
+        System.out.println("child constructor");
+    }
+}
+public class Inheritance 
+{
+
+    public static void main(String[] args)
+    {
+        
+    }
+}
+
+
+//
+interface Bank
+{
+    int salary=5000;
+    void greet();
+}
+interface RBI extends Bank
+{
+    void atmGuideLines();
+}
+    class Axis implements RBI
+    {
+        public void greet()
+{
+            System.out.println("welcome all");
+        }
+         public void atmGuideLines()
+{
+            System.out.println("pin safe rule");
+        }
+    }
+   public class InterfaceDemo
+{
+
+    public static void main(String[] args)
+{
+     Axis axis = new Axis();
+     axis.greet();
+
+     Bank bank =new Axis();
+     bank.greet();
+
+    }
+
+   }
+
+
+//
+interface Breakfast
+{
+    void eat();
+    void make();
+}
+class Idly implements Breakfast
+{
+    public void eat()
+{
+        System.out.println("eating idly");
+    }
+    public void make()
+{
+        System.out.println("give steam for 10 mins in the cooker");
+    }
+}
+class Dosa implements Breakfast
+{
+    public void eat(){
+        System.out.println("eating dosa");
+    }
+    public void make(){
+        System.out.println("cook in the pan or 2 mins");
+}
+}
+public class LooselyCoupled
+ {
+    public static void main(String[] args)
+{
+        Breakfast breakfast = new Idly();
+        breakfast.make();
+        breakfast.eat();
+
+         Breakfast breakfast1 = new Dosa();
+        breakfast1.make();
+        breakfast1.eat();
+       
+    }
+    
+}
+
+
+//
+class Flipkart{
+    void search()
+    {
+        System.out.println("default search");
+    }
+    void filter(int price)
+    {
+ System.out.println("filter by price");
+    }
+    void filter(String brand){
+System.out.println("filter by brand");
+    }
+    void filter(String brand, int price )
+{
+System.out.println("filter by brand and price");
+    }
+}
+public class OverloadingDemo {
+    
+    public static void main(String[] args)
+    {
+        Flipkart flipkart =new Flipkart();
+        flipkart.filter("nike",678);
+    }
+}
+
+
+//
+public class ExceptionDemo 
+{
+    public static void main(String[] args)
+    {
+        System.out.println("take ready");
+
+        try
+        {
+           System.out.println(2/0);
+        }
+
+        catch( ArithmeticException e)
+        {
+           System.out.println("something went wrong");
+        }
+
+        System.out.println("take breakfast");
+        System.out.println("drive for 10 mins");
+        System.out.println("Login ansd start your day");
+        
+    }
+    
+}
