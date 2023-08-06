@@ -1,1 +1,333 @@
+//arraylist
+-----------------
+package Bootcamp.Day7.Collection;
 
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> names = new ArrayList<>(100);
+		names.add("anil");
+		names.add("ankit");
+		names.add("saurav");
+		
+		System.out.println(names.get(20));
+
+	}
+
+}
+
+
+//batchlist
+------------
+package Bootcamp.Day7.Collection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class BatchList {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> batch1 = new ArrayList<>();
+		batch1.add("Rohit");
+		batch1.add("John");
+		batch1.add("Ankit");
+		batch1.add("Sourab");
+		batch1.add("Rahul");
+		
+		ArrayList<String> batch2 = new ArrayList<>();
+		batch2.add("Anil");
+		batch2.add("Manas");
+		batch2.add("Rohit");
+		batch2.add("Rahul");
+		batch2.add("Karan");
+		
+		ArrayList<String> batch = new ArrayList<>();
+		batch.addAll(batch1);
+		
+		for(String ele : batch2) {
+			if(!batch.contains(ele))
+				batch.add(ele);
+		}
+		
+		Collections.sort(batch);
+		
+		System.out.println("Batch : " + batch);
+
+	}
+}
+
+
+//batchlistbetter
+---------------------
+package Bootcamp.Day7.Collection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class BatchListBetter {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> batch1 = new ArrayList<>();
+		batch1.add("Rohit");
+		batch1.add("John");
+		batch1.add("Ankit");
+		batch1.add("Sourab");
+		batch1.add("Rahul");
+		
+		ArrayList<String> batch2 = new ArrayList<>();
+		batch2.add("Anil");
+		batch2.add("Manas");
+		batch2.add("Rohit");
+		batch2.add("Rahul");
+		batch2.add("Karan");
+		
+		for(String ele : batch2) {
+			if(!batch1.contains(ele))
+				batch1.add(ele);
+		}
+		
+		Collections.sort(batch1);
+		System.out.println("Grouped batch : " + batch1);
+
+	}
+}
+
+
+
+//collection
+---------------
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class CollectionsDemo {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		nums.add(7);
+		nums.add(23);
+		nums.add(13);
+		nums.add(4);
+		nums.add(13);
+		
+		System.out.println("Before sorting = " + nums);
+		
+		Collections.sort(nums);
+		
+		System.out.println("After sorting = " + nums);
+		
+		Collections.reverse(nums);
+		
+		System.out.println("After reverse : " + nums);
+		
+		System.out.println("min : " + Collections.min(nums));
+		System.out.println("max : " + Collections.max(nums));
+
+	}
+}
+
+//curserclass
+---------------
+package Bootcamp.Day7.Collection;
+
+import java.util.ArrayList;
+
+import java.util.Iterator;
+
+public class CursorClasses {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		nums.add(1);
+		nums.add(2);
+		nums.add(3);
+		nums.add(4);
+		
+		System.out.println("nums = " + nums);
+		
+		Iterator<Integer> itr = nums.iterator();
+		
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+	}
+}
+
+
+//listiterator
+------------------
+package Bootcamp.Day7.Collection;
+
+import java.util.ArrayList;
+import java.util.ListIterator;
+
+public class ListIteratorDemo {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		nums.add(1);
+		nums.add(2);
+		nums.add(3);
+		nums.add(4);
+		
+		System.out.println("nums = " + nums);
+		
+		ListIterator<Integer> listItr = nums.listIterator();
+		
+		System.out.println("Backward direction");
+		while(listItr.hasPrevious()) {
+			System.out.println(listItr.previous());
+		}
+		
+		System.out.println("Forward direction");
+		while(listItr.hasNext()) {
+			System.out.println(listItr.next());
+		}
+		
+		System.out.println("Backward direction");
+		while(listItr.hasPrevious()) {
+			System.out.println(listItr.previous());
+		}
+	}
+}
+
+
+//map
+-----------
+package Bootcamp.Day7.Collection;
+
+import java.util.HashMap;
+
+public class MapDemo {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, String> hm = new HashMap<>();
+		hm.put("sachin", "batsman");
+		hm.put("dhoni", "wicketkeeper");
+		hm.put("bumrah", "bowler");
+		hm.put("dhoni", "captain");
+		System.out.println(hm);
+		System.out.println(hm.get("sachin"));
+		System.out.println(hm.get("dhoni"));
+		
+		System.out.println("Get all values : " + hm.values());
+		System.out.println("Get all key : " + hm.keySet());
+		
+		for(String key : hm.keySet()) {
+			System.out.println("Key : " + key + " Value : " + hm.get(key));
+		}
+	}
+}
+
+//set
+---------
+package Bootcamp.Day7.Collection;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.TreeSet;
+
+public class SetDemo {
+
+	public static void main(String[] args) {
+		
+		// Own order
+		HashSet<String> fruits = new HashSet<>();
+		fruits.add("mango");
+		fruits.add("banana");
+		fruits.add("mango");
+		fruits.add("apple");
+		fruits.add("pineapple");
+		fruits.add("apple");
+		System.out.println("fruits : " + fruits);
+		
+		// Insertion order
+		LinkedHashSet<String> fruits2 = new LinkedHashSet<>();
+		fruits2.add("mango");
+		fruits2.add("banana");
+		fruits2.add("mango");
+		fruits2.add("apple");
+		fruits2.add("pineapple");
+		fruits2.add("apple");
+		System.out.println("fruits2 : " + fruits2);
+		
+		// Sorted order
+		
+		TreeSet<String> fruits3 = new TreeSet<>();
+		fruits3.add("mango");
+		fruits3.add("banana");
+		fruits3.add("mango");
+		fruits3.add("apple");
+		fruits3.add("pineapple");
+		fruits3.add("apple");
+		System.out.println("fruits3 : " + fruits3);
+
+	}
+
+}
+
+//sorting
+-------------
+package Bootcamp.Day7.Collection;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import Bootcamp.Day6.Collection.Product;
+
+public class SortingDemo {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> nums = new ArrayList<>();
+		nums.add(5);
+		nums.add(2);
+		nums.add(4);
+		nums.add(6);
+		
+		Collections.sort(nums);
+		
+		ArrayList<Product> products = new ArrayList<>();
+		products.add(new Product(1, "laptop", 65000, "electronics"));
+		products.add(new Product(2, "shirt", 4000, "men clothing"));
+		products.add(new Product(3, "mobile", 39000, "electronics"));
+		
+		//Collections.sort(products);
+		
+		
+
+	}
+
+}
+
+//static
+------------
+package Bootcamp.Day7.Collection;
+
+import java.util.Stack;
+
+public class StackDemo {
+
+	public static void main(String[] args) {
+		
+		Stack<Integer> nums = new Stack<>();
+		nums.add(1);
+		nums.push(2);
+		nums.push(3);
+		System.out.println("Elements : " + nums);
+		nums.pop();
+		System.out.println("Elements : " + nums);
+		nums.pop();
+		System.out.println("Elements : " + nums);
+
+	}
+
+}
