@@ -1,1 +1,20 @@
+//dockerfile
+----------------
+FROM openjdk:8
 
+WORKDIR /app
+
+COPY . /app/
+
+RUN javac Hello.java
+
+ENTRYPOINT [ "java", "Hello" ]
+
+
+//Hello.java
+---------------
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
