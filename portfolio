@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    footer {
+      background-color: #78d4e0;
+      padding: 25px;
+    }
 
+    .jumbotron
+    {
+      background-color:rgb(229, 235, 201);
+    }
+
+    #a{
+      border-radius: 30%;
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Portfolio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+    
+  <div class="container text-center ">
+    <img style="float: left;" id="a"  src="img/vaish.jpeg" width="300px " >
+    <h1>Hello!</h1>      
+    <p>I'm Vaishnavi Patil,a software engineer associate at Telstra.</p>
+  </div>
+</div>
+  
+<div class="container-fluid bg-3 bg-success text-center">    
+  <h3>Contact me</h3><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <h3>linkedIn</h3>
+      <a href="https://www.linkedin.com/in/vaishnavi-patil-18671b1b8/" target="_blank"><img src="img/link.png" height="100px" width="100px"></a>
+      
+    </div>
+    <div class="col-sm-3"> 
+      <h3>Facebook</h3>
+      <a href="https://www.facebook.com/profile.php?id=100036441780823" target="_blank"><img src="img/face.jpg" height="100px" width="100px"></a>
+    </div>
+    <div class="col-sm-3"> 
+      <h3>Whatsapp</h3>
+      <a href="tel:9561863006" target="_blank"><img src="img/WhatsApp..webp" height="100px" width="100px"></a>
+    </div>
+    <div class="col-sm-3">
+      <h3>Instagram</h3>
+      <a href="https://www.instagram.com/vaishnavi_7501/" target="_blank"><img src="img/insta.webp" height="100px" width="100px"></a>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="container-fluid text-center bg-success">
+  <p></p>
+</footer>
+
+</body>
+</html>
